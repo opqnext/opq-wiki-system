@@ -11,6 +11,5 @@ require 'vendor/autoload.php';
 
 $git = new PHPGit\Git();
 var_dump($git);
-exit;
-$c = $git->clone('https://github.com/opqnext/opq-wiki.git', '/path/to/repo');
-//var_dump($c);
+$c = $git->clone('https://github.com/opqnext/opq-wiki.git', '/data/wiki.opqnext.com/wiki');
+var_dump($c);
