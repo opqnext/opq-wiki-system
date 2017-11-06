@@ -17,11 +17,11 @@ function ListDir ($dirname)
     while(false !== ($entry= $Ld->read())) {
         $checkdir=$dirname."/".$entry;
         if(is_dir($checkdir)&&!preg_match("[^\.]",$entry)){
-            echo"<li><p>".$checkdir."当前<span style='color:#ff00aa'>是</span>目录</p></li>";
+            echo"<li><p>".$checkdir."</p></li>";
             ListDir($checkdir);
         }else{
             if($entry != '.' && $entry != '..'){
-                echo"<li><p>".$entry."当前不是目录</p></li>";
+                echo"<li><p><a href='#' >".$entry."</a></p></li>";
             }
         }
     }
