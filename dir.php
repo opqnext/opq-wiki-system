@@ -20,7 +20,7 @@ function ListDir ($dirname)
             echo"<li><p>".$checkdir."当前<span style='color:#ff00aa'>是</span>目录</p></li>";
             ListDir($checkdir);
         }else{
-            if($entry != '.' || $entry != '..'){
+            if($entry != '.' && $entry != '..'){
                 echo"<li><p>".$entry."当前不是目录</p></li>";
             }
         }
