@@ -12,7 +12,7 @@ ListDir($str);
 
 function ListDir ($dirname)
 {
-    $Ld= opendir($dirname);
+    $Ld= dir($dirname);
     echo"<ul>";
     while(false !== ($entry= $Ld->read())) {
         $checkdir=$dirname."/".$entry;
