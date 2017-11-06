@@ -5,7 +5,8 @@
  * Date: 2017/11/6
  * Time: 下午2:51
  */
-
+ini_set("display_errors", "On");
+error_reporting(E_ALL | E_STRICT);
 date_default_timezone_set('Asia/Shanghai');
 require 'vendor/autoload.php';
 
