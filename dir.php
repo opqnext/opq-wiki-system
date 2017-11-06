@@ -8,30 +8,22 @@
 
 
 $str= "/data/wiki.opqnext.com/wiki/";
-function listDir($dir)
+ListDir($str);
+
+function ListDir ($dirname)
 {
-    if(is_dir($dir))
-    {
-        if ($dh = opendir($dir))
-        {
-            while (($file = readdir($dh)) !== false)
-            {
-                if((is_dir($dir."/".$file)) && $file!="." && $file!="..")
-                {
-                    echo "<b><font color='red'>文件名：</font></b>",$file,"<br><hr>";
-                    listDir($dir."/".$file."/");
-                }
-                else
-                {
-                    if($file!="." && $file!="..")
-                    {
-                        echo $file."<br>";
-                    }
-                }
-            }
-            closedir($dh);
+    $Ld= opendir($dirname);
+    echo"<ul>";
+    while(false !== ($entry= $Ld->read())) {
+        $checkdir=$dirname."/".$entry;
+        if(is_dir($checkdir)&&!preg_match("[^\.]",$entry)){
+            echo"<li><p>".$checkdir."当前<span style='color:#ff00a  
+    a'>是</span>目录</p></li>";
+            ListDir($checkdir);
+        }else{
+            echo"<li><p>".$entry."当前不是目录</p></li>";
         }
     }
+    $Ld->close();
+    echo"</ul>";
 }
-//开始运行
-listDir($str);
