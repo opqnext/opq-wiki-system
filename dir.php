@@ -21,7 +21,7 @@ function ListDir ($dirname)
             ListDir($checkdir);
         }else{
             if($entry != '.' && $entry != '..'){
-                echo"<li><p><a href='#' >".$entry."</a></p></li>";
+                echo"<li><p><a href='#' >".__DIR__.$entry."</a></p></li>";
             }
         }
     }
