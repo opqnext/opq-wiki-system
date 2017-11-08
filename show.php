@@ -20,4 +20,4 @@ $git->setRepository('/data/wiki.opqnext.com/wiki');
 //var_dump($git->tree('master'));
 
 
-$c = $git->show('master',['format'=>'oneline','abbrev-commit'=>true]);
+$c = $git->show('ea923f390f6dbf0caf041239379b62e2f4e4518c',['format'=>'oneline','abbrev-commit'=>'true']);
