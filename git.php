@@ -5,7 +5,6 @@
  * Date: 2017/11/8
  * Time: 下午2:14
  */
-echo '<pre>';
 
 shell_exec("git pull origin master");
 

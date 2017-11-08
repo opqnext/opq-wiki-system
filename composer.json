@@ -3,7 +3,7 @@
     "type": "library",
     "license": "mit",
     "require": {
-        "kzykhys/git": "v0.1.2",
+        "kzykhys/git": "dev-master",
         "catfan/medoo":"v1.4.5"
     },
     "repositories": {
