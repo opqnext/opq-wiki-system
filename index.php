@@ -13,8 +13,8 @@ require 'vendor/autoload.php';
 $git = new \PHPGit\Git();
 
 //var_dump($git);
-//$c = $git->clone('https://github.com/opqnext/opq-wiki.git', '/data/wiki.opqnext.com/wiki');
-//var_dump($c);
-$git->setRepository('/data/wiki.opqnext.com/wiki');
-$res = $git->pull();
+$c = $git->clone('https://github.com/opqnext/opq-wiki.git', '/data/wiki.opqnext.com/wiki');
+var_dump($c);
+//$git->setRepository('/data/wiki.opqnext.com/wiki');
+//$res = $git->pull();
 echo "git pull ".$res;
