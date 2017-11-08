@@ -16,6 +16,7 @@ $git->setRepository('/data/wiki.opqnext.com/wiki');
 $hash = $_GET['hash'];
 
 echo $hash;
+var_dump($git->tree('master'));
 
 $c = $git->show($hash);
 var_dump($c);
