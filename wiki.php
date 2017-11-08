@@ -23,9 +23,9 @@ echo '<style>a{text-decoration:none;color: cornflowerblue}</style>';
 $html = '<ul style="font-size: 12px;">';
 foreach ($res as $val){
     if($val['is_dir']){
-        $html .='<li>[目录]<a href="/wiki/'.$val['id'].'.html" >'.$val['name'].'</a></li>';
+        $html .='<li>[目录]<a href="/detail.php?id='.$val['id'].'" >'.$val['name'].'</a></li>';
     } else {
-        $html .='<li><a href="/wiki/'.$val['id'].'.html" >'.$val['name'].'</a></li>';
+        $html .='<li><a href="/detail.php?id='.$val['id'].'" >'.$val['name'].'</a></li>';
     }
 }
 $html .= '</ul>';
