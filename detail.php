@@ -20,7 +20,7 @@ $git->setRepository('/data/wiki.opqnext.com/wiki');
 $log = $git->log($_GET['id'].'.html',['limit'=>5]);
 echo "<pre>";
 
-echo '--版本历史(仅显示最近5次修订版本)--';
+echo '--版本历史(仅显示最近5次修订版本)---';
 $log_html = '<div style="font-size: 12px;color: darkorange">';
 foreach ($log as $val){
     $log_html .='<p><a href="/show.php?hash='.$val['hash'].'" >'.$val['hash'].'</a> | name:'.$val['name'].' | date:'.$val['date'].' | title:'.$val['title'].'</p>';
