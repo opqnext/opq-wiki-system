@@ -14,10 +14,10 @@ $git = new PHPGit\Git();
 
 $git->setRepository('/data/wiki.opqnext.com/wiki');
 
-//$hash = strval($_GET['hash']);
+$hash = strval($_GET['hash']);
 //
 //echo $hash;
 //var_dump($git->tree('master'));
 
 
-echo $git->show('ea923f390f6dbf0caf041239379b62e2f4e4518c',['format'=>'full','abbrev-commit'=>true]);
+echo $git->show($hash,['format'=>'full','abbrev-commit'=>true]);
