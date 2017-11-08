@@ -15,4 +15,6 @@ $git->setRepository('/data/wiki.opqnext.com/wiki');
 
 $hash = $_GET['hash'];
 
-echo $git->show($hash);
+echo $hash;
+
+$git->show($hash);
