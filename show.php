@@ -18,5 +18,5 @@ $hash = strval($_GET['hash']);
 echo $hash;
 //var_dump($git->tree('master'));
 
-$c = $git->show('2ee3e2f22e5d8463944689662c3447c1ce0d1f32',[]);
+$c = $git->show('2ee3e2f22e5d8463944689662c3447c1ce0d1f32');
 var_dump($c);
