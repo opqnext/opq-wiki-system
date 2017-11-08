@@ -16,7 +16,7 @@ $git = new PHPGit\Git();
 
 $git->setRepository('/data/wiki.opqnext.com/wiki');
 
-$log = $git->log($_GET['id'].'.html');
+$log = $git->log($_GET['id'].'.html',['limit'=>2]);
 
 echo "<pre>";
 print_r($log);
