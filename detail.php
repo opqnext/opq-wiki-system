@@ -8,4 +8,6 @@
 
 echo time();
 
+echo '/wiki/'.$_GET['id'].'.html';
+
 include '/wiki/'.$_GET['id'].'.html';
