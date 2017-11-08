@@ -18,6 +18,7 @@ $git = new PHPGit\Git();
 $git->setRepository('/data/wiki.opqnext.com/wiki');
 
 $log = $git->log($_GET['id'].'.html',['limit'=>5]);
+echo "<pre>";
 
 echo '--版本历史(仅显示最近5次修订版本)--';
 $log_html = '<div style="font-size: 12px;color: darkorange">';
