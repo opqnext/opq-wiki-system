@@ -18,5 +18,5 @@ $hash = $_GET['hash'];
 echo $hash;
 var_dump($git->tree('master'));
 
-$c = $git->show($hash);
+$c = $git->show('1.html');
 var_dump($c);
