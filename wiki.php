@@ -19,5 +19,14 @@ $db = new \Medoo\Medoo([
 ]);
 
 $res = $db->select('opq_wiki_content',['id','name','uid','is_dir'],['pid'=>0]);
-echo "<pre>";
-print_r($res);
+
+$html = '<ul>';
+foreach ($res as $val){
+    if($val['is_dir']){
+        $html .='<li>[目录]<a href="/wiki/'.$val['id'].'.html" >'.$val['name'].'</a></li>';
+    } else {
+        $html .='<li><a href="/wiki/'.$val['id'].'.html" >'.$val['name'].'</a></li>';
+    }
+}
+$html .= '</ul>';
+echo $html;
