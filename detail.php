@@ -15,9 +15,11 @@ $git = new PHPGit\Git();
 
 $git->setRepository('/data/wiki.opqnext.com/wiki');
 
-$shortlog = $git->shortlog->summary();
+$log = $git->log();
 
 echo "<pre>";
-print_r($shortlog);
+print_r($log);
 
 include './wiki/'.$_GET['id'].'.html';
+
+echo "----";
