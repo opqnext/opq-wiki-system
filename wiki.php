@@ -18,6 +18,6 @@ $db = new \Medoo\Medoo([
     'password' => 'shayu1234'
 ]);
 
-$res = $db->select('opq_wiki_content','',['id','name','uid','is_dir'],['pid'=>0]);
+$res = $db->select('opq_wiki_content',['id','name','uid','is_dir'],['pid'=>0]);
 echo "<pre>";
 print_r($res);
