@@ -7,6 +7,7 @@
  */
 date_default_timezone_set('Asia/Shanghai');
 require 'vendor/autoload.php';
+echo '<style>a{text-decoration:none;color: cornflowerblue}</style>';
 echo time();
 echo "<br>";
 
@@ -17,8 +18,7 @@ $git = new PHPGit\Git();
 $git->setRepository('/data/wiki.opqnext.com/wiki');
 
 $log = $git->log($_GET['id'].'.html',['limit'=>5]);
-echo "<pre>";
-print_r($log);
+
 echo '--版本历史(仅显示最近5次修订版本)--';
 $log_html = '<div style="font-size: 12px;color: darkorange">';
 foreach ($log as $val){
