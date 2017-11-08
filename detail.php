@@ -26,6 +26,8 @@ foreach ($log as $val){
 }
 $log_html .= '</div>';
 
+echo $log_html;
+
 echo '--文件内容--';
 
 include './wiki/'.$_GET['id'].'.html';
