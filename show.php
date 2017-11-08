@@ -19,4 +19,4 @@ $git->setRepository('/data/wiki.opqnext.com/wiki');
 //echo $hash;
 //var_dump($git->tree('master'));
 
-$c = $git->show('ea923f390f6dbf0caf041239379b62e2f4e4518c');
+$c = $git->show('ea923f390f6dbf0caf041239379b62e2f4e4518c',['format' => 'oneline']);
