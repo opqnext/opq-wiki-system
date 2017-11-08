@@ -16,10 +16,17 @@ $git = new PHPGit\Git();
 
 $git->setRepository('/data/wiki.opqnext.com/wiki');
 
-$log = $git->log($_GET['id'].'.html',['limit'=>2]);
-
+$log = $git->log($_GET['id'].'.html',['limit'=>5]);
 echo "<pre>";
 print_r($log);
+echo '--版本历史(仅显示最近5次修订版本)--';
+$log_html = '<div style="font-size: 12px;color: darkorange">';
+foreach ($log as $val){
+    $log_html .='<p>hash:'.$val['hash'].' | name:'.$val['name'].' | date:'.$val['date'].' | title:'.$val['title'].'</p>';
+}
+$log_html .= '</div>';
+
+echo '--文件内容--';
 
 include './wiki/'.$_GET['id'].'.html';
 
