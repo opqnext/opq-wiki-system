@@ -7,7 +7,8 @@
  */
 
 echo time();
+echo "<br>";
 
-echo '/wiki/'.$_GET['id'].'.html';
+echo './wiki/'.$_GET['id'].'.html';
 
-include '/wiki/'.$_GET['id'].'.html';
+include './wiki/'.$_GET['id'].'.html';
