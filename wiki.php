@@ -19,7 +19,7 @@ $db = new \Medoo\Medoo([
 ]);
 
 $res = $db->select('opq_wiki_content',['id','name','uid','is_dir'],['pid'=>0]);
-
+echo '<style>a{text-decoration:none;color: cornflowerblue}</style>';
 $html = '<ul style="font-size: 12px;">';
 foreach ($res as $val){
     if($val['is_dir']){
