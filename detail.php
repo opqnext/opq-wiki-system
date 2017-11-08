@@ -5,7 +5,8 @@
  * Date: 2017/11/8
  * Time: 下午1:09
  */
-
+date_default_timezone_set('Asia/Shanghai');
+require 'vendor/autoload.php';
 echo time();
 echo "<br>";
 
