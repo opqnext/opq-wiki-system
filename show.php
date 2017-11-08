@@ -18,6 +18,8 @@ $git->setRepository('/data/wiki.opqnext.com/wiki');
 //
 //echo $hash;
 //var_dump($git->tree('master'));
+$option = new \Symfony\Component\OptionsResolver\OptionsResolver();
+$option->setDefaults(['format'=>'oneline','abbrev-commit'=>true]);
 
 
-$c = $git->show('ea923f390f6dbf0caf041239379b62e2f4e4518c',['format'=>'oneline','abbrev-commit'=>'true']);
+$c = $git->show('ea923f390f6dbf0caf041239379b62e2f4e4518c',['format'=>'oneline','abbrev-commit'=>true]);
