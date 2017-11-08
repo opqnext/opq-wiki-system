@@ -17,4 +17,5 @@ $hash = $_GET['hash'];
 
 echo $hash;
 
-$git->show($hash);
+$c = $git->show($hash);
+var_dump($c);
