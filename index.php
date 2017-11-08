@@ -15,4 +15,5 @@ $git = new PHPGit\Git();
 //$c = $git->clone('https://github.com/opqnext/opq-wiki.git', '/data/wiki.opqnext.com/wiki');
 //var_dump($c);
 $git->setRepository('/data/wiki.opqnext.com/wiki');
-$git->pull();
+$res = $git->pull();
+echo "git pull ".$res;
