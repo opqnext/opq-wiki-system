@@ -19,5 +19,8 @@ $hash = strval($_GET['hash']);
 //echo $hash;
 //var_dump($git->tree('master'));
 
-
-echo $git->show($hash,['format'=>'full','abbrev-commit'=>true]);
+$a = ['oneline', 'short', 'medium', 'full', 'fuller', 'email', 'raw','format'];
+foreach ($a as $vv){
+    echo $git->show($hash,['format'=>$vv,'abbrev-commit'=>true]);
+    echo '----';
+}
