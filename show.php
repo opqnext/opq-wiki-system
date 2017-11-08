@@ -22,5 +22,5 @@ $hash = strval($_GET['hash']);
 $a = ['oneline', 'short', 'medium', 'full', 'fuller', 'email', 'raw','format'];
 foreach ($a as $vv){
     echo $git->show($hash,['format'=>$vv,'abbrev-commit'=>true]);
-    echo '----';
+    echo '-----------------------------------------------------';
 }
