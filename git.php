@@ -6,6 +6,7 @@
  * Time: 下午2:14
  */
 echo '<pre>';
-system("git pull", $var);
+
+shell_exec("git pull");
 
 error_log('git pull '.date('Y-m-d H:i:s'));
