@@ -7,6 +7,6 @@
  */
 echo '<pre>';
 
-shell_exec("git pull");
+shell_exec("git pull origin master");
 
 error_log('git pull '.date('Y-m-d H:i:s'));
