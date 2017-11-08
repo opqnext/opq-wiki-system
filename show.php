@@ -13,7 +13,7 @@ $git = new PHPGit\Git();
 
 $git->setRepository('/data/wiki.opqnext.com/wiki');
 
-$hash = $_GET['hash'];
+$hash = strval($_GET['hash']);
 
 echo $hash;
 //var_dump($git->tree('master'));
