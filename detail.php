@@ -22,7 +22,7 @@ print_r($log);
 echo '--版本历史(仅显示最近5次修订版本)--';
 $log_html = '<div style="font-size: 12px;color: darkorange">';
 foreach ($log as $val){
-    $log_html .='<p>hash:'.$val['hash'].' | name:'.$val['name'].' | date:'.$val['date'].' | title:'.$val['title'].'</p>';
+    $log_html .='<p><a href="/show.php?hash='.$val['hash'].'" >'.$val['hash'].'</a> | name:'.$val['name'].' | date:'.$val['date'].' | title:'.$val['title'].'</p>';
 }
 $log_html .= '</div>';
 
