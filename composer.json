@@ -1,7 +1,6 @@
 {
   "name": "php/opq-wiki",
   "description": "php/opq-wiki The php-wiki system",
-  "version": "v",
   "keywords": ["php","wiki","opq-wiki"],
   "require": {
     "php": ">=5.6.28",
