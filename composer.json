@@ -5,6 +5,7 @@
   "require": {
     "php": ">=5.5.24",
     "kzykhys/git": "v0.1.2",
+    "catfan/medoo":"v1.4.5",
     "filp/whoops":"*"
   },
   "repositories": {

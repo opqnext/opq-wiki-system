@@ -36,6 +36,7 @@ class Controller extends Validate{
     public function __construct() {
         $this->temp = Template::getInstance();
         $this->git = new Git();
+        $this->git->setRepository('./wiki');
     }
 
     /**
