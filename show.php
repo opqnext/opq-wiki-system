@@ -45,5 +45,5 @@ echo $res;
 
 <script>
     var diff2htmlUi = new Diff2HtmlUI({diff: '<?php echo $res;?>'});
-    diff2htmlUi.draw('html-target-elem', {inputFormat: 'json', showFiles: true, matching: 'lines'});
+    diff2htmlUi.draw('html-target-elem', {inputFormat: 'diff', showFiles: true, matching: 'lines'});
 </script>
