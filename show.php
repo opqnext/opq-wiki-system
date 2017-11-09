@@ -5,6 +5,7 @@
  * Date: 2017/11/8
  * Time: 下午1:56
  */
+header("Content-type: text/html; charset=utf-8");
 ini_set("display_errors", "On");
 error_reporting(E_ALL | E_STRICT);
 date_default_timezone_set('Asia/Shanghai');
@@ -24,7 +25,7 @@ $a = ['oneline', 'short', 'medium', 'full', 'fuller', 'email'];
 $res =  $git->show($hash,['format'=>'oneline','abbrev-commit'=>true]);
 
 
-echo $res;
+echo str_replace("\n","<br>",$res);
 ?>
 <html>
     <head>
