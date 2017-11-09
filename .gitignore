@@ -2,4 +2,5 @@
 /vendor/
 /cache/
 /wiki/
+/old/
 composer.lock

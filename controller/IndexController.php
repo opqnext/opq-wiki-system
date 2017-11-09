@@ -26,4 +26,13 @@ class IndexController extends Controller{
         $res = $this->git->pull();
         echo "git pull wiki ".$res;
     }
+
+    public function wiki()
+    {
+
+    }
+
+    public function test(){
+        echo json_encode(['ec'=>0]);
+    }
 } 
