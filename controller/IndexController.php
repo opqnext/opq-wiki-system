@@ -13,6 +13,6 @@ class IndexController extends Controller{
     public function index(){
         echo "666";
         $this->assign('msg',"赋值");
-        //$this->display('index/index.html');
+        $this->display('index/index.html');
     }
 } 
