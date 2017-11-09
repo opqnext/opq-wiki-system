@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: lenovo
+ * User: opq.next
  * Date: 2016/6/14
  * Time: 16:00
  */
@@ -11,7 +11,6 @@ use core\controller\Controller;
 class IndexController extends Controller{
 
     public function index(){
-        echo "666";
         $this->assign('msg',"赋值");
         $this->display('index/index.html');
     }
