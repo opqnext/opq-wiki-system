@@ -24,7 +24,6 @@ $a = ['oneline', 'short', 'medium', 'full', 'fuller', 'email'];
 $res =  $git->show($hash,['format'=>'oneline','abbrev-commit'=>true]);
 
 
-echo "<pre>";
 echo $res;
 ?>
 
