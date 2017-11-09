@@ -1,15 +1,17 @@
 {
-    "name": "momo/opq-wiki-system",
-    "type": "library",
-    "license": "mit",
-    "require": {
-        "kzykhys/git": "v0.1.2",
-        "catfan/medoo":"v1.4.5"
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
-        }
+  "name": "php/moa",
+  "description": "php/Moa The PHP Framework",
+  "version": "1.0.2-beta3",
+  "keywords": ["php","php framework"],
+  "require": {
+    "php": ">=5.6.28",
+    "filp/whoops":"*"
+
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
     }
+  }
 }

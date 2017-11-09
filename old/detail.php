@@ -31,6 +31,6 @@ echo $log_html;
 
 echo '--文件内容--';
 
-include './wiki/'.$_GET['id'].'.html';
+include './wiki/'.$_GET['id'].'.html';// mikoa.com
 
 echo "----";
