@@ -23,14 +23,19 @@ use Core\Xsearch\XS;
 use Core\Xsearch\XSearch;
 use Core\Lib\SmsSend;
 use Core\Model\BaseModel;
+use PHPGit\Git;
 
 class Controller extends Validate{
+
+    protected $temp;
+    protected $git;
 
     /**
      * 构造函数
      */
     public function __construct() {
         $this->temp = Template::getInstance();
+        $this->git = new Git();
     }
 
     /**

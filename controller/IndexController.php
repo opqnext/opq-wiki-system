@@ -7,7 +7,6 @@
  */
 namespace controller;
 use core\controller\Controller;
-use PHPGit\Git;
 
 class IndexController extends Controller{
 
@@ -18,10 +17,7 @@ class IndexController extends Controller{
 
     public function clone_wiki()
     {
-        $git = new Git();
-
-        var_dump($git);
-        $c = $git->clone('https://github.com/opqnext/opq-wiki.git', './wiki');
-        var_dump($c);
+        $c = $this->git->clone('https://github.com/opqnext/opq-wiki.git', './wiki');
+        echo 'git clone wiki '.$c;
     }
 } 
