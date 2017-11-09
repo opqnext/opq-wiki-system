@@ -44,6 +44,6 @@ echo $res;
 </div>
 
 <script>
-    var diff2htmlUi = new Diff2HtmlUI({diff: '<?php echo $res;?>'});
+    var diff2htmlUi = new Diff2HtmlUI({diff: '<?php echo str_replace('\n','',$res);?>'});
     diff2htmlUi.draw('html-target-elem', {inputFormat: 'diff', showFiles: true, matching: 'lines'});
 </script>
