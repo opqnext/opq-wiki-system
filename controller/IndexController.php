@@ -73,6 +73,13 @@ class IndexController extends Controller{
         var_dump($push);
     }
 
+    public function diff($hash)
+    {
+        $diff =  $this->git->show($hash,['format'=>'oneline','abbrev-commit'=>true]);
+        $this->assign('diff',str_replace("\n", '\n',$diff));
+        $this->display('index/diff.html');
+    }
+
 
     public function test(){
         echo json_encode(['ec'=>0]);
