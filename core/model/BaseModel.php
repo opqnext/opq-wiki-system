@@ -1,36 +1,31 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: lenovo
- * Date: 2015/11/11
- * Time: 14:10
+ *
  */
 
 namespace core\model;
-use core\lib\MysqlDB;
+use Medoo\Medoo;
+
 
 class BaseModel
 {
 
-    public $db;
+    protected $db = 'db';
+    //public $InstanceModel;
 
     /**
      * 构造函数
      */
     public function __construct()
     {
-        $this->db = MysqlDB::getInstance(HOST, DB_NAME, USER, PASS);
-    }
-
-    /**
-     * 取得指定的Model
-     * @param $value
-     * @return mixed
-     */
-    public static function getModel($value) {
-        $class = "\\Model\\".ucfirst($value)."Model";
-        $obj = new $class();
-        return $obj;
+        //$this->db = MysqlDB::getInstance(HOST, DB_NAME, USER, PASS);
+        $this->db = new Medoo([
+            'database_type' => 'mysql',
+            'database_name' => DB_NAME,
+            'server' => HOST,
+            'username' => USER,
+            'password' => PASS
+        ]);
     }
 
 }

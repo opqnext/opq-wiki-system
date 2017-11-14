@@ -1,0 +1,52 @@
+<!--{layout:header.html}-->
+<div class="container-fluid">
+    <div class="col-md-2">
+        <div class="list-group" style="height: 100px;">
+            <small><a href="/add/1">新建一篇文章</a></small>
+            <div style="border: 1px dashed #ddd; padding-top: 100px;margin-top: 10px;">
+            </div>
+        </div>
+        <div class="list-group">
+            <!--{foreach($wiki as $val)}-->
+            <div class="list-group-item" style="border: 0;">
+                <p class="text-muted">
+                    <!--{if($val[is_dir])}-->
+                    <span class="glyphicon glyphicon-book" style="color: cornflowerblue"></span>
+                    <!--{else}-->
+                    <span class="glyphicon glyphicon-file"></span>
+                    <!--{/if}-->
+                    <a href="/wiki/<!--{$val['id']}-->"><!--{$val['name']}--></a>
+                </p>
+            </div>
+            <div style="border: 1px dashed #ddd;"></div>
+            <!--{/foreach}-->
+        </div>
+    </div>
+    <div class="content col-md-9" style="margin-left: 70px;margin-top: 30px;">
+        <!--{$html}-->
+        <hr>
+        <div class="list-group">
+            <!--{foreach($log as $val)}-->
+            <div class="list-group-item" style="border: 0;">
+                <p class="text-muted">
+                    <span class="glyphicon glyphicon-user"></span>
+                    <a href="/diff/<!--{$val['hash']}-->"><!--{$val['hash']}--></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <!--{$val['name']}-->&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <!--{$val['email']}-->&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <!--{$val['date']}-->&nbsp;&nbsp;|&nbsp;&nbsp;
+                    <!--{$val['title']}-->
+                </p>
+            </div>
+            <!--{/foreach}-->
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.content').load('./wiki/2.html');
+    });
+
+</script>
+</body>
+</html>

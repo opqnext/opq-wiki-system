@@ -1,12 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: lenovo
- * Date: 2016/6/14
- * Time: 15:55
- */
 
 namespace model;
-class InstanceModel {
 
-} 
+/**
+ * @package model
+ * @property \model\IndexModel $index
+ * @property \model\AdminModel $admin
+ */
+
+class InstanceModel
+{
+    protected $component = array();
+
+
+    public function __get($key) {
+        $class = "\\model\\".ucfirst($key)."Model";
+        $this->component[$key] =  new $class();
+        return isset($this->component[$key]) ? $this->component[$key] : null;
+    }
+}

@@ -3,4 +3,5 @@
 /cache/
 /wiki/
 /old/
+/conf/conf.php
 composer.lock

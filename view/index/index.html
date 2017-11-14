@@ -1,1 +1,65 @@
-opq-wiki
+<!--{layout:header.html}-->
+<div class="container-fluid">
+    <div class="col-md-9">
+        <div class="list-group" style="height: 100px;">
+            <div style="border: 1px dashed #ddd; padding-top: 100px;margin-top: 10px;"></div>
+        </div>
+        <div class="list-group">
+            <!--{foreach($wiki as $val)}-->
+            <div class="list-group-item" style="border: 0;">
+                <p class="text-muted">
+                    <!--{if($val[is_dir])}-->
+                    <span class="glyphicon glyphicon-book" style="color: cornflowerblue"></span>
+                    <!--{else}-->
+                    <span class="glyphicon glyphicon-file"></span>
+                    <!--{/if}-->
+                    <a href="/wiki/<!--{$val['id']}-->"><!--{$val['name']}--></a>
+                    <small class="pull-right">
+                        2017-10-22
+                    </small>
+                </p>
+            </div>
+            <div style="border: 1px dashed #ddd;"></div>
+            <!--{/foreach}-->
+            <div class="text-right">
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-2" style="margin-left: 70px;margin-top: 30px;display: none">
+        <div>
+            <a href="#" class="thumbnail">
+                <img src="http://p1.music.126.net/qDiDdR6wbQCsGsn34dmCVg==/2378243650941255.jpg"
+                     alt="通用的占位符缩略图">
+            </a>
+        </div>
+        <div>
+            <a href="#" class="thumbnail">
+                <img src="http://p1.music.126.net/7w7pX7BKTdBcFF1AtuZC2g==/5957153999486269.jpg"
+                     alt="通用的占位符缩略图">
+            </a>
+        </div>
+        <div>
+            <a href="#" class="thumbnail">
+                <img src="http://p1.music.126.net/JUE7I2P9IwGOLPtxGvtTnQ==/2399134371866485.jpg"
+                     alt="通用的占位符缩略图">
+            </a>
+        </div>
+        <div>
+            <a href="#" class="thumbnail">
+                <img src="http://p1.music.126.net/UuSe-Vc6rS7JtRJSQgDU2g==/2323268069553116.jpg"
+                     alt="通用的占位符缩略图">
+            </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

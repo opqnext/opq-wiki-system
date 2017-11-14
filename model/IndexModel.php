@@ -7,9 +7,15 @@
  */
 
 namespace model;
+use core\model\BaseModel;
 
-
-class IndexModel
+class IndexModel extends BaseModel
 {
 
+    public function getWiki()
+    {
+        $res = $this->db->select('opq_wiki_content',['id','name','uid','is_dir'],['pid'=>0]);
+        return $res;
+
+    }
 }
