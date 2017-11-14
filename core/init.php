@@ -17,6 +17,8 @@ use core\yin\Yin;
 spl_autoload_register([new AutoLoad(),'loadprint']);
 require_once YIN_PATH.'/core/conf/conf.ini.php';
 
-$Yin = Yin::getInstance();
-$Yin->run();
+// 路由类
+require_once YIN_PATH.'/conf/rewrite.php';
+//$Yin = Yin::getInstance();
+//$Yin->run();
 

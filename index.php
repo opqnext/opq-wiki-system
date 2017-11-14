@@ -42,13 +42,8 @@ if($_GET['debug']=="herxi"){
     require_once YIN_PATH . '/core/lib/ErrorHandle.php';
     $error=\core\lib\ErrorHandle::getInstance(true);
 }
-/**
- * 获取\model\InstanceModel
- * @return \model\InstanceModel
- */
-function M(){
-    return new \model\InstanceModel();
-}
+
+
 
 
 

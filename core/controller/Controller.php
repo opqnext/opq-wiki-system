@@ -8,27 +8,15 @@
  */
 namespace core\controller;
 
-use core\lib\Curl;
-use core\lib\Excel;
-use Core\Lib\ExcelInit;
-use core\lib\IdCard;
-use Core\lib\Pager;
-use core\lib\Uuid;
-use Core\Mongo\MongoDB;
-use Core\Push\Push;
-use Core\Redis\RedisDB;
 use core\view\Template;
-use Core\View\viewInit;
-use Core\Xsearch\XS;
-use Core\Xsearch\XSearch;
-use Core\Lib\SmsSend;
-use Core\Model\BaseModel;
+use model\InstanceModel;
 use PHPGit\Git;
 
 class Controller extends Validate{
 
     protected $temp;
     protected $git;
+    protected $model;
 
     /**
      * 构造函数
@@ -37,6 +25,7 @@ class Controller extends Validate{
         $this->temp = Template::getInstance();
         $this->git = new Git();
         $this->git->setRepository('./wiki');
+        $this->model = new InstanceModel();
     }
 
     /**
@@ -105,71 +94,11 @@ class Controller extends Validate{
     }
 
     /**
-     * 获取讯搜接口类
-     * @return XSearch
-     */
-    public function getLibrary(){
-        $xs = new XS('herxi');
-        return XSearch::getInstance($xs);
-    }
-
-    /**
-     * 获取发短信接口
-     * @return SmsSend
-     */
-    public function getSms(){
-        return new SmsSend();
-    }
-
-    /**
      * 获取Excel类
      * @return ExcelInit
      */
     public function getExcel(){
         return new ExcelInit();
-    }
-
-    /**
-     * @param $model
-     * @return \Model\MemberModel
-     */
-    public function model($model){
-        $class = "\\Model\\".ucfirst($model)."Model";
-        $obj = new $class();
-        return $obj;
-    }
-
-    /**
-     * 获取推送接口类
-     */
-    public function getPush(){
-        //return new Push();
-    }
-
-    public function getMongoDB(){
-        return new MongoDB(MBHOST, MNAME, MOUSER, MPASS);
-    }
-
-    public function getRedisDB(){
-        return new RedisDB('10.66.123.5','crs-77hndx96:Rnf1qW3H');
-    }
-
-    /**
-     * 获取uuid
-     * @return mixed
-     */
-    public function getUuid(){
-        $uuid = new Uuid();
-        return $uuid->uuid();
-    }
-
-    /**
-     * 获取星座
-     * @return mixed
-     */
-    public function getConstellation($month, $day){
-        $uuid = new Uuid();
-        return $uuid->getConstellation($month, $day);
     }
 
     /**
@@ -181,22 +110,6 @@ class Controller extends Validate{
     public function getPager($count,$size,$url){
         $pager = new Pager();
         return $pager->pager($count,$size,$url);
-    }
-
-
-    /**
-     * curl获取内容
-     * @param $url
-     * @return mixed
-     */
-    public function getCurlContent($url){
-        $curl = new Curl();
-        return $curl->getCurlContent($url);
-    }
-    /** 获取身份证号出生地 */
-    public function ClassIdCard($code){
-        $card = new IdCard('5bb4fd173720da1a753a84db814c261e',$code);
-        return $card->getCardInfo();
     }
 
     public function error($msg){
