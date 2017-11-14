@@ -9,6 +9,7 @@
 namespace core\controller;
 
 use core\view\Template;
+use HyperDown\Parser;
 use model\InstanceModel;
 use PHPGit\Git;
 
@@ -17,6 +18,7 @@ class Controller extends Validate{
     protected $temp;
     protected $git;
     protected $model;
+    protected $parser;
 
     /**
      * 构造函数
@@ -26,6 +28,7 @@ class Controller extends Validate{
         $this->git = new Git();
         $this->git->setRepository('./wiki');
         $this->model = new InstanceModel();
+        $this->parser = new Parser();
     }
 
     /**

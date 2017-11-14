@@ -33,7 +33,8 @@ class IndexController extends Controller{
         $wiki = $this->model->index->getWiki();
         $this->assign('wiki',$wiki);
         // html内容
-        $this->assign('html',file_get_contents('./wiki/'.$num.'.html'));
+        $md = file_get_contents('./wiki/'.$num.'.md');
+        $this->assign('html',$this->parser->makeHtml($md));
         // 历史版本
         $log = $this->git->log($num.'.html',['limit'=>5]);
         $this->assign('log',$log);
@@ -49,17 +50,17 @@ class IndexController extends Controller{
     public function ajax_new_wiki()
     {
         $markdown = $this->getParams('markdownText','P');
-        $html = $this->getParams('html','P');
-        $md_file = '10.md';
-        $html_file = '10.html';
-        $markdown_res = file_put_contents('./wiki/'.$md_file,$markdown);
-        $html_res = file_put_contents('./wiki/'.$html_file,html_entity_decode($html));
+        //$html = $this->getParams('html','P');
+        $md_file = '12.md';
+        //$html_file = '11.html';
+        $markdown_res = file_put_contents('./wiki/'.$md_file,html_entity_decode($markdown));
+        //$html_res = file_put_contents('./wiki/'.$html_file,html_entity_decode($html));
         var_dump($markdown_res);
-        var_dump($html_res);
-        $add = $this->git->add($html_file);
+        //var_dump($html_res);
+        //$add = $this->git->add($html_file);
         $add = $this->git->add($md_file);
         var_dump($add);
-        $commit = $this->git->commit('添加10.html文件');
+        $commit = $this->git->commit('添加12.md');
         var_dump($commit);
         $push = $this->git->push();
         var_dump($push);

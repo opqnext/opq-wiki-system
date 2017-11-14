@@ -7,7 +7,8 @@
     "kzykhys/git": "v0.1.2",
     "catfan/medoo":"v1.4.5",
     "filp/whoops":"*",
-    "noahbuscher/macaw": "dev-master"
+    "noahbuscher/macaw": "dev-master",
+    "joyqi/hyper-down":"dev-master"
   },
   "repositories": {
     "packagist": {
