@@ -11,7 +11,7 @@ class IndexController extends Controller{
 
     public function index(){
         $wiki = $this->model->index->getWiki();
-        //print_r($wiki);
+        print_r($wiki);
         $this->assign('wiki',$wiki);
         $this->display('index/index.html');
     }
@@ -28,22 +28,30 @@ class IndexController extends Controller{
         echo "git pull wiki ".$res;
     }
 
-    public function wiki($num)
+    public function wiki($id)
     {
         $wiki = $this->model->index->getWiki();
         $this->assign('wiki',$wiki);
         // html内容
-        $md = file_get_contents('./wiki/'.$num.'.md');
+        $md = file_get_contents('./wiki/'.$id.'.md');
         $this->assign('html',$this->parser->makeHtml($md));
         // 历史版本
-        $log = $this->git->log($num.'.html',['limit'=>5]);
+        $log = $this->git->log($id.'.html',['limit'=>5]);
         $this->assign('log',$log);
+        $this->assign('id',$id);
         $this->display('index/wiki.html');
     }
 
     public function add($is_dir)
     {
         //echo $is_dir;
+        $this->display('index/add.html');
+    }
+
+    public function edit($id){
+        $md = file_get_contents('./wiki/'.$id.'.md');
+        $this->assign('markdown',$md);
+        $this->assign('html',$this->parser->makeHtml($md));
         $this->display('index/add.html');
     }
 
