@@ -15,6 +15,12 @@
 
     </div>
     <div class="col-md-6">
+        标题:<input type="text" class="form-control" id="title" placeholder="请输入名称">
+    </div>
+    <div class="col-md-6" style="height: 80px;">
+
+    </div>
+    <div class="col-md-6">
         <form role="form">
             <div class="form-group">
                 <label >文本框</label>
@@ -36,7 +42,7 @@
 </body>
 <script>
 
-    $('#markdown').change(function () {
+    $('#markdown').bind('input propertychange','textarea',function () {
         var parser = new HyperDown;
         var markdownText = $('#markdown').val();
         console.log(markdownText);
@@ -47,8 +53,10 @@
 
     $('#newWiki').click(function () {
         var markdownText = $('#markdown').val();
+        var markdownTitle = $('#title').val();
         var param = {
-            markdownText:markdownText
+            markdownText:markdownText,
+            markdownTitle:markdownTitle
         };
         $.post('/ajax_new_wiki', param, function(data){
             if (data.ec == 200) {

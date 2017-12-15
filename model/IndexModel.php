@@ -16,6 +16,10 @@ class IndexModel extends BaseModel
     {
         $res = $this->db->select('opq_wiki_content',['id','name','uid','is_dir'],['pid'=>0]);
         return $res;
+    }
 
+    public function insertWiki($data)
+    {
+        return $this->db->insert('opq_wiki_content',$data);
     }
 }

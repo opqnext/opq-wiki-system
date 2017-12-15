@@ -8,7 +8,8 @@
     "catfan/medoo":"v1.4.5",
     "filp/whoops":"*",
     "noahbuscher/macaw": "dev-master",
-    "joyqi/hyper-down":"dev-master"
+    "joyqi/hyper-down":"dev-master",
+    "overtrue/pinyin": "3.0.6"
   },
   "repositories": {
     "packagist": {

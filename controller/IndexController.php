@@ -6,12 +6,13 @@
  */
 namespace controller;
 use core\controller\Controller;
+use Overtrue\Pinyin\Pinyin;
 
 class IndexController extends Controller{
 
     public function index(){
         $wiki = $this->model->index->getWiki();
-        print_r($wiki);
+//        print_r($wiki);
         $this->assign('wiki',$wiki);
         $this->display('index/index.html');
     }
@@ -58,8 +59,23 @@ class IndexController extends Controller{
     public function ajax_new_wiki()
     {
         $markdown = $this->getParams('markdownText','P');
+        $title = $this->getParams('markdownTitle','P');
         //$html = $this->getParams('html','P');
-        $md_file = '12.md';
+        $pingyin = new Pinyin();
+        $file_name = $pingyin->permalink($title);
+
+        $data = [
+            'id'=>time(),
+            'name'=>$title,
+            'uid'=>0,
+            'is_dir'=>0,
+            'pid'=>0,
+            'create_time'=>time(),
+            'file_name'=>$file_name
+        ];
+        $res = $this->model->index->insertWiki($data);
+
+        $md_file = $file_name.'.md';
         //$html_file = '11.html';
         $markdown_res = file_put_contents('./wiki/'.$md_file,html_entity_decode($markdown));
         //$html_res = file_put_contents('./wiki/'.$html_file,html_entity_decode($html));
@@ -68,7 +84,7 @@ class IndexController extends Controller{
         //$add = $this->git->add($html_file);
         $add = $this->git->add($md_file);
         var_dump($add);
-        $commit = $this->git->commit('添加12.md');
+        $commit = $this->git->commit('添加'.$title);
         var_dump($commit);
         $push = $this->git->push();
         var_dump($push);

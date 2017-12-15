@@ -28,7 +28,7 @@ class Controller extends Validate{
         $this->git = new Git();
         $this->git->setRepository('./wiki');
         $this->model = new InstanceModel();
-        $this->parser = new Parser();
+        $this->parser = new Parser();   //markdown
     }
 
     /**
