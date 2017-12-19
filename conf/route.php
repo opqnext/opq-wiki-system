@@ -12,6 +12,7 @@ Macaw::post('ajax_edit_wiki','controller\IndexController@ajax_edit_wiki');
 Macaw::get('diff/(:any)','controller\IndexController@diff');
 
 Macaw::get('pull','controller\IndexController@pull_wiki');
+Macaw::get('clone','controller\IndexController@clone_wiki');
 
 
 
