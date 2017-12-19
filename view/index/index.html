@@ -10,18 +10,19 @@
                 <p class="text-muted">
                     <!--{if($val[is_dir])}-->
                     <span class="glyphicon glyphicon-book" style="color: cornflowerblue"></span>
+                    <a href="/wiki/<!--{$val['id']}-->/<!--{$val['id']}-->"><!--{$val['name']}--></a>
                     <!--{else}-->
                     <span class="glyphicon glyphicon-file"></span>
+                    <a href="/wiki/<!--{$val['pid']}-->/<!--{$val['id']}-->"><!--{$val['name']}--></a>
                     <!--{/if}-->
-                    <a href="/wiki/<!--{$val['id']}-->"><!--{$val['name']}--></a>
                     <small class="pull-right">
-                        2017-10-22
+                        <!--{$val['create_time']}-->
                     </small>
                 </p>
             </div>
             <div style="border: 1px dashed #ddd;"></div>
             <!--{/foreach}-->
-            <div class="text-right">
+            <!--<div class="text-right">
                 <ul class="pagination">
                     <li><a href="#">&laquo;</a></li>
                     <li><a href="#">1</a></li>
@@ -30,34 +31,18 @@
                     <li><a href="#">4</a></li>
                     <li><a href="#">&raquo;</a></li>
                 </ul>
-            </div>
+            </div>-->
 
         </div>
     </div>
-    <div class="col-md-2" style="margin-left: 70px;margin-top: 30px;display: none">
+    <div class="col-md-2" style="margin-left:70px;margin-top: 30px;">
         <div>
-            <a href="#" class="thumbnail">
-                <img src="http://p1.music.126.net/qDiDdR6wbQCsGsn34dmCVg==/2378243650941255.jpg"
-                     alt="通用的占位符缩略图">
-            </a>
-        </div>
-        <div>
-            <a href="#" class="thumbnail">
-                <img src="http://p1.music.126.net/7w7pX7BKTdBcFF1AtuZC2g==/5957153999486269.jpg"
-                     alt="通用的占位符缩略图">
-            </a>
-        </div>
-        <div>
-            <a href="#" class="thumbnail">
-                <img src="http://p1.music.126.net/JUE7I2P9IwGOLPtxGvtTnQ==/2399134371866485.jpg"
-                     alt="通用的占位符缩略图">
-            </a>
-        </div>
-        <div>
-            <a href="#" class="thumbnail">
-                <img src="http://p1.music.126.net/UuSe-Vc6rS7JtRJSQgDU2g==/2323268069553116.jpg"
-                     alt="通用的占位符缩略图">
-            </a>
+            <p>部门列表 <a href="/navigation">(新建部门)</a></p>
+            <ul class="nav">
+                <!--{foreach($nav as $val)}-->
+                <li><a href="/wiki/<!--{$val['id']}-->/<!--{$val['id']}-->"><!--{$val['name']}--></a></li>
+                <!--{/foreach}-->
+            </ul>
         </div>
     </div>
 </div>

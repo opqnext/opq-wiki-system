@@ -15,6 +15,12 @@
 
     </div>
     <div class="col-md-6">
+        标题:<input type="text" class="form-control" id="title" value="<!--{$wiki['name']}-->" readonly="readonly">
+    </div>
+    <div class="col-md-6" style="height: 80px;">
+
+    </div>
+    <div class="col-md-6">
         <form role="form">
             <div class="form-group">
                 <label >文本框</label>
@@ -27,7 +33,11 @@
             <!--{$html}-->
         </div>
     </div>
-    <div class="col-md-12" style="height: 30px;">
+    <div class="col-md-12">
+        备注:<input type="text" class="form-control" id="msg">
+    </div>
+    <input type="hidden" id="file_name" value="<!--{$wiki['file_name']}-->">
+    <div class="col-md-12" style="height: 30px;margin-top: 30px;">
         <button id="newWiki" type="button" class="btn btn-default">提交</button>
     </div>
 </div>
@@ -47,10 +57,14 @@
 
     $('#newWiki').click(function () {
         var markdownText = $('#markdown').val();
+        var file_name = $('#file_name').val();
+        var msg = $('#msg').val();
         var param = {
-            markdownText:markdownText
+            markdownText:markdownText,
+            file_name:file_name,
+            msg:msg
         };
-        $.post('/ajax_new_wiki', param, function(data){
+        $.post('/ajax_edit_wiki', param, function(data){
             if (data.ec == 200) {
                 alert('成功');
             } else {

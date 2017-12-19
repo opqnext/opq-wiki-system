@@ -18,7 +18,7 @@ spl_autoload_register([new AutoLoad(),'loadprint']);
 require_once YIN_PATH.'/core/conf/conf.ini.php';
 
 // 路由类
-require_once YIN_PATH.'/conf/rewrite.php';
+require_once YIN_PATH.'/conf/route.php';
 //$Yin = Yin::getInstance();
 //$Yin->run();
 
