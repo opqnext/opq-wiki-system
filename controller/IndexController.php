@@ -21,7 +21,7 @@ class IndexController extends Controller{
 
     public function clone_wiki()
     {
-        $c = $this->git->clone('https://github.com/opqnext/opq-wiki.git', './wiki');
+        $c = $this->git->clone('https://gitee.com/opqnext/opqnext-wiki.git', './wiki');
         echo 'git clone wiki '.$c;
     }
 
